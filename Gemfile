@@ -63,3 +63,6 @@ gem 'pg'
 
 # Figaro for env
 gem 'figaro'
+
+# https://github.com/rgeo/activerecord-postgis-adapter
+gem 'activerecord-postgis-adapter'

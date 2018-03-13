@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20180312042215) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,16 +51,4 @@ ActiveRecord::Schema.define(version: 0) do
     t.string "description", limit: 255
   end
 
-  create_table "spatial_ref_sys", primary_key: "srid", id: :integer, default: nil, force: :cascade do |t|
-    t.string "auth_name", limit: 256
-    t.integer "auth_srid"
-    t.string "srtext", limit: 2048
-    t.string "proj4text", limit: 2048
-  end
-
-  add_foreign_key "accounts_roles", "accounts", column: "account", name: "accounts_roles_account_fkey", on_delete: :cascade
-  add_foreign_key "accounts_roles", "roles", column: "role", primary_key: "name", name: "accounts_roles_role_fkey", on_delete: :cascade
-  add_foreign_key "listings", "accounts", name: "listings_account_id_fkey", on_delete: :cascade
-  add_foreign_key "listings_i18n", "languages", column: "language", primary_key: "code", name: "listings_i18n_language_fkey"
-  add_foreign_key "listings_i18n", "listings", name: "listings_i18n_listing_id_fkey", on_delete: :cascade
 end
