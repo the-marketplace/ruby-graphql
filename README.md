@@ -1,17 +1,32 @@
-# README
+# :construction: ruby-graphql
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails-graphql implementation of themarketplace.
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version: 2.5.0
 
 * System dependencies
+  - Ruby
+  - Rails
+  - figaro
 
 * Configuration
+  ```ruby
+  bundle install
+  ```
+  Make sure you have an `config/application.yml` with the proper credentials (ask a dev)
 
-* Database creation
+* Database creation / Useful commands
+  ```ruby
+  rake db:setup
+  ```
+  
+  ```ruby
+  bundle exec rake db:schema:dump
+  ```
+  
+  ```ruby
+  rails generate scaffold [Table_Name_Singular] [colum2_name]:[column1_type] [colum2_name]:[column2_type] ...
+  ```
 
 * Database initialization
 
